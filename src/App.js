@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css';
+import Display from './components/display';
 import Form from './components/form';
 import Header from './components/header';
 
@@ -32,10 +33,7 @@ function App() {
       <Header title="Calculadora de Impostos" />
       <div className='Body'>
         <Form handleResult={updateResult} handleInss={updateInss} handleIrpf={updateIrpf}/>
-        <p className='paragrafo'>Seu salário líquido: {result}</p>
-        <p className='paragrafo'>Confira seus descontos: </p>
-        <p className='paragrafo'>INSS: {dinss}</p>
-        <p className='paragrafo'>IRPF: {dirpf}</p>
+        <Display a={result} b={dinss} c={dirpf}/>
         <button id='limpar' onClick={clear}>Limpar Informações</button>
       </div>
     </div>
